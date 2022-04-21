@@ -9,7 +9,7 @@ public class Main {
         catch (Exception e){
             e.printStackTrace();
         }
-
-
+        creator.ShowAllLogins();
+        System.out.println("The number of created logins: " + creator.GetNumbersOfLogins());
     }
 }
