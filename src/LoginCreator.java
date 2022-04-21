@@ -25,21 +25,23 @@ public class LoginCreator {
     }
     private boolean CheckUnique(String login){
         boolean result = true;
-        for(int i = 0; i < listOfLogins.size(); i++){
-            if(listOfLogins.get(i).equals(login)){
+        for (String element : listOfLogins) {
+            if (element.equals(login)) {
                 result = false;
+                break;
             }
         }
         return result;
     }
     public void ShowAllLogins(){
         System.out.println("All currently existing logins: ");
-        for(int i = 0; i < listOfLogins.size(); i++){
-            System.out.println(listOfLogins.get(i));
+        for (String element : listOfLogins) {
+            System.out.println(element);
         }
     }
     public void DeleteLogin() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Please type in the login you would like to delete: ");
         String login = reader.readLine();
         for(int i = 0; i < listOfLogins.size(); i++){
             if(listOfLogins.get(i).equals(login)){
@@ -53,6 +55,5 @@ public class LoginCreator {
     public int GetNumbersOfLogins(){
         return countOfLogins;
     }
-    public void CloseStream() throws IOException {reader.close();}
 }
 
