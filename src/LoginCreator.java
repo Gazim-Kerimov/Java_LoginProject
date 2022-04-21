@@ -38,7 +38,9 @@ public class LoginCreator {
             System.out.println(listOfLogins.get(i));
         }
     }
-    public void DeleteLogin(String login){
+    public void DeleteLogin() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String login = reader.readLine();
         for(int i = 0; i < listOfLogins.size(); i++){
             if(listOfLogins.get(i).equals(login)){
                 listOfLogins.remove(i);
@@ -46,6 +48,7 @@ public class LoginCreator {
                 break;
             }
         }
+        reader.close();
     }
     public int GetNumbersOfLogins(){
         return countOfLogins;
