@@ -11,6 +11,7 @@ public class LoginCreator {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while(true){
             String inputLogin = reader.readLine();
+            System.out.println("Please create login №" + (countOfLogins+1) +" :");
             if(CheckUnique(inputLogin)){
                 listOfLogins.add(inputLogin);
                 System.out.println("Your login was successfully created");
