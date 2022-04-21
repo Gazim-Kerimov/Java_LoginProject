@@ -45,6 +45,7 @@ public class LoginCreator {
             if(listOfLogins.get(i).equals(login)){
                 listOfLogins.remove(i);
                 System.out.println("Login was successfully deleted");
+                countOfLogins--;
                 break;
             }
         }
