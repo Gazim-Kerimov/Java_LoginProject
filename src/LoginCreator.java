@@ -6,9 +6,9 @@ import java.util.*;
 public class LoginCreator {
     private static ArrayList<String> listOfLogins = new ArrayList<>();
     private static int countOfLogins = 0;
+    private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public void AddLogin() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while(true){
             System.out.println("Please create login №" + (countOfLogins+1) +" :");
             String inputLogin = reader.readLine();
@@ -22,7 +22,6 @@ public class LoginCreator {
                 System.out.println("Such login already exist. Please try create another login");
             }
         }
-        reader.close();
     }
     private boolean CheckUnique(String login){
         boolean result = true;
@@ -50,10 +49,10 @@ public class LoginCreator {
                 break;
             }
         }
-        reader.close();
     }
     public int GetNumbersOfLogins(){
         return countOfLogins;
     }
+    public void CloseStream() throws IOException {reader.close();}
 }
 
