@@ -34,6 +34,7 @@ public class LoginCreator {
         return result;
     }
     public void ShowAllLogins(){
+        System.out.println("All currently existing logins: ");
         for(int i = 0; i < listOfLogins.size(); i++){
             System.out.println(listOfLogins.get(i));
         }
