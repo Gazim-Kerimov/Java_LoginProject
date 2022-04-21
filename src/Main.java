@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Main {
     public static void main(String[] args) {
         LoginCreator creator = new LoginCreator();
@@ -6,10 +8,18 @@ public class Main {
                 creator.AddLogin();
             }
         }
-        catch (Exception e){
+        catch (IOException e){
             e.printStackTrace();
         }
         creator.ShowAllLogins();
         System.out.println("The number of created logins: " + creator.GetNumbersOfLogins());
+
+        try {
+            creator.DeleteLogin();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        creator.ShowAllLogins();
     }
 }
