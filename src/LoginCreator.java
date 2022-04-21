@@ -10,8 +10,8 @@ public class LoginCreator {
     public void AddLogin() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while(true){
-            String inputLogin = reader.readLine();
             System.out.println("Please create login №" + (countOfLogins+1) +" :");
+            String inputLogin = reader.readLine();
             if(CheckUnique(inputLogin)){
                 listOfLogins.add(inputLogin);
                 System.out.println("Your login was successfully created");
