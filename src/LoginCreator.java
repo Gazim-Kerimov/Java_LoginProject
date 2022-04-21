@@ -4,8 +4,8 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class LoginCreator {
-    static ArrayList<String> listOfLogins = new ArrayList<>();
-    static int countOfLogins = 0;
+    private static ArrayList<String> listOfLogins = new ArrayList<>();
+    private static int countOfLogins = 0;
 
     public void AddLogin() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -14,6 +14,7 @@ public class LoginCreator {
             if(CheckUnique(inputLogin)){
                 listOfLogins.add(inputLogin);
                 System.out.println("Your login was successfully created");
+                countOfLogins++;
                 break;
             }
             else{
@@ -21,7 +22,6 @@ public class LoginCreator {
             }
         }
         reader.close();
-
     }
 
     private boolean CheckUnique(String login){
@@ -34,4 +34,18 @@ public class LoginCreator {
         return result;
     }
 
+    public void ShowAllLogins(){
+        for(int i = 0; i < listOfLogins.size(); i++){
+            System.out.println(listOfLogins.get(i));
+        }
+    }
+    public void DeleteLogin(String login){
+        for(int i = 0; i < listOfLogins.size(); i++){
+            if(listOfLogins.get(i).equals(login)){
+                listOfLogins.remove(i);
+                System.out.println("Login was successfully deleted");
+                break;
+            }
+        }
+    }
 }
