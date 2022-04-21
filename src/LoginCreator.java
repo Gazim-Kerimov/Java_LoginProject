@@ -23,7 +23,6 @@ public class LoginCreator {
         }
         reader.close();
     }
-
     private boolean CheckUnique(String login){
         boolean result = true;
         for(int i = 0; i < listOfLogins.size(); i++){
@@ -33,7 +32,6 @@ public class LoginCreator {
         }
         return result;
     }
-
     public void ShowAllLogins(){
         for(int i = 0; i < listOfLogins.size(); i++){
             System.out.println(listOfLogins.get(i));
@@ -48,4 +46,8 @@ public class LoginCreator {
             }
         }
     }
+    public int GetNumbersOfLogins(){
+        return countOfLogins;
+    }
 }
+
